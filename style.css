@@ -1,0 +1,134 @@
+:root {
+  --bg-primary: #131313;
+  --bg-secondary: #181818;
+  --header-primary: #0bc0d8;
+  --header-secondary: #ffffff;
+  --para: #ffffff;
+}
+
+/* above adds variables used anywhere else in the file */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.ab-con {
+  color: var(--para);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  text-align: center;
+}
+
+/* above and below is the css for the body text i put in. i think i want everything to take just a couple seconds to load in, cuz thats a nice feature i like. */
+
+.ab-con-1 {
+  grid-column: 1;
+  font-size: 1em;
+}
+
+.ab-con-2 {
+  grid-column: 2;
+  font-size: 1em;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--para);
+  font-family: 'Pt Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+.center {
+  animation-name: fly-in;
+  animation-delay: 0.25s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  /* above defines specs, direction of the animation */
+  left: -150%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* if i over complicated any of this pls help and explain if possible */
+div h3 {
+  color: var(--header-primary);
+  font-family: 'Lobster', sans-serif;
+  font-size: 1.7em;
+}
+
+h1 {
+  color: var(--header-primary);
+  font-size: 3em;
+  font-family: 'Lobster', sans-serif;
+  text-align: center;
+  width: auto;
+}
+
+h2 {
+  color: var(--header-secondary);
+  font-size: 1.2em;
+}
+
+.header {
+  height: 100vh;
+  width: 100vw;
+  /* leaving not alphabetized because keeping height and width together */
+  text-align: center;
+}
+
+/* below styles the navigation bar */
+nav {
+  background-color: var(--bg-secondary);
+  display: grid;
+  font-size: 1em;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  height: 3em;
+  width: 100vw;
+  left: 0;
+  position: fixed;
+  top: 0;
+  
+}
+
+.nav-div-1 {
+  grid-column: 1;
+}
+
+.nav-div-2 {
+  grid-column: 2;
+}
+
+.nav-div-3 {
+  grid-column: 3;
+}
+
+nav div {
+  padding-top: 0.7em;
+  text-align: center;
+  transition: 0.3s;
+}
+
+a {
+  color: white;
+  /* below removes default underline */
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--header-primary);
+  transition: 0.3s;
+}
+
+/* makes animations, in this case moves text to the right */
+@keyframes fly-in {
+  from {
+    left: -150%;
+  } to {
+    left: 50%;
+  }
+}
